@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
+    <title>Manao Coffee</title>
+    <link rel="stylesheet" type="text/css" href="../css/presupuesto.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+            <div class="navbar_main">
+                <div class="navbar_panel">
+                    <div class="navbar_logo">
+                        <a href="index.html">
+                            <img src="../images/ManaoCoffee.png" alt="Manao Logo" width="140" height="120">
+                        </a>
+                    </div>
+                </div>
+                <div class="navbar_main_element">
+                    <ul class="navbar_menu">
+                        <li class="nav_item">
+                            <a href="../index.html">Home</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="../views/productos.html">Gallery</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="../views/presupuesto.html">Form</a>
+                        </li>
+                        <li class="nav_item">
+                            <a href="../views/contacto.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <button>Book now</button>
+            </div>
+    </header>
+
+    <!-- Content of the website -->
+
+    <!-- Booking form -->
+    <section class="section-2">
+        <h3>Subscription to Manao Coffee</h3>
+                <form id="form" action="#" method="post" target="_blank">
+                        <div class="form-item">
+                            <label class="form-label" for="firstname">Firstname</label>
+                            <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Your firstname" >
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="lastname">Lastname</label>
+                            <input class="form-input" id="lastname" type="text" name="lastname" placeholder="Your lastname" >
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="phone">Phone</label>
+                            <input class="form-input" id="phone" type="text" name="phone" placeholder="Your phone" >
+                        </div>
+                        <div class="form-item">
+                            <label class="form-label" for="email">Email</label>
+                            <input class="form-input" id="email" type="text" name="email" placeholder="Your email" >
+                        </div>
+                        <br>
+                        <div class="form-item">
+                            <label class="form-label" for="info">Information about yourself - Allergies:</label>
+                            <br>
+                            <textarea class="form-input" id="info" name="info" placeholder="What do you like, what are your allergies?" cols="30" rows="10" ></textarea>
+                        </div>
+                        <br>
+                        <div class="politic">
+                            <input type="checkbox" name="politica" id="politica" value="I accept the politic and privacy" >
+                            <label for="politica">I accept the politic and privacy</label>
+                        </div>
+                        <br>
+                        <input type="submit" id="send" name="send form" value="SEND FORM" class="boton_form" >
+                        <input type="reset" id="clean" name="clean form" value="CLEAN FORM" class="boton_form" >
+                </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="mini-nav">
+            <ul class="mini-nav">
+                <li><a href="">Menu</a></li>
+                <li><a href=""></a>Contact</li>
+                <li><a href=""></a>Gallery</li>
+                <li><a href=""></a>About</li>
+            </ul>
+        </div>
+        <div class="mini-nav">
+            <ul class="social-list">
+                <li><img src="../images/facebook-icon.png" alt="facebook"> <a href="#"></a></li>
+                <li><img src="../images/instagram-icon.png" alt="instagram"><a href="#"></a></li>
+                <li><img src="../images/youtube-icon.png" alt="youtube"><a href="#"></a></li>
+            </ul>
+        </div>
+        <div class="rights">
+            <p>©  2023 Manao Coffee, 12 plaza de la fuente, 43890, Tarragona. All Rights Reserved. Privacy Policy.</p>
+        </div>
+    </footer>
+    <script src="../js/validationform.js"></script>
+</body>
+</html>

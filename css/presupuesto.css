@@ -1,0 +1,119 @@
+/*Form*/
+body{
+    margin: 0px;
+    font-family: Poppins, sans-serif;
+}
+
+/*Navigation bar*/
+.navbar_main{
+    align-items: center;
+    box-sizing: border-box;
+    color: rgba(21, 21, 21, 0.8);
+    background-color: #232930;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+}
+
+.navbar_menu{
+    display: flex;
+    list-style: none;
+}
+
+.nav_item > a{
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+button{
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    font-weight: bold;
+}
+
+
+/*Booking form*/
+.section-2{
+    color: #FCFCFC;
+    background-color: #8a8b8d;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+}
+
+.section-2 > h3{
+    font-size: 25px;
+    letter-spacing: 2px;
+    padding: 30px;
+}
+
+div.form-item{
+    margin-top: 13px;
+}
+
+.form-label{
+    text-transform: none;
+}
+
+.politic{
+    text-transform: none;
+}
+
+.boton_form{
+    color: #FCFCFC;
+    background-color: #232930;
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+    height: 31.2px;
+    width: 102.59px;
+}
+
+
+/*Footer*/
+footer{
+    color: white;
+    background-color: #232930;
+    padding: 50px 0px 50px 0px ;
+    text-align: center;
+}
+
+.mini-nav{
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.mini-nav > ul > li{
+    display: inline-block;
+    list-style: none;
+    padding: 0px 10px 50px 10px;
+
+}
+
+.mini-nav > ul > li >a{
+    text-decoration: none;
+    color: white;
+}
+
+.rights > p{
+    color: #8a8b8d;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+
+

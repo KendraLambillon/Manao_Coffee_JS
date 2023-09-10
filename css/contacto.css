@@ -1,0 +1,94 @@
+/*Contact*/
+body{
+    margin: 0px;
+    font-family: Poppins, sans-serif;
+}
+
+/*Navigation bar*/
+.navbar_main{
+    align-items: center;
+    box-sizing: border-box;
+    color: rgba(21, 21, 21, 0.8);
+    background-color: #232930;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+}
+
+.navbar_menu{
+    display: flex;
+    list-style: none;
+}
+
+.nav_item > a{
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+}
+
+button{
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    font-weight: bold;
+}
+
+
+/*Contact*/
+.contact-info{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1{
+    margin-bottom: 60px;
+}
+
+iframe{
+    width: 80%;
+    height: 500px;
+    filter: invert(80%);
+}
+
+/*Footer*/
+footer{
+    color: white;
+    background-color: #232930;
+    padding: 50px 0px 50px 0px ;
+    text-align: center;
+}
+
+.mini-nav{
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.mini-nav > ul > li{
+    display: inline-block;
+    list-style: none;
+    padding: 0px 10px 50px 10px;
+
+}
+
+.mini-nav > ul > li >a{
+    text-decoration: none;
+    color: white;
+}
+
+.rights > p{
+    color: #8a8b8d;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+
+
+
