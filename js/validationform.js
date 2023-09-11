@@ -15,6 +15,7 @@ sendButton.addEventListener("click", (e)=>{
 function validation() {
     var firstname = document.getElementById("firstname");
     var lastname = document.getElementById("lastname");
+    var phone = document.getElementById("phone");
     var email = document.getElementById("email");
     var politica = document.getElementById("politica");
 
@@ -28,10 +29,10 @@ function validation() {
         valid = false; //There is an error, so I want "valid" to be false
     }else{
         //Regular expression
-        let name_re = /^[a-zA-Z ]{2,30}$/;
+        let firstname_re = /^[a-zA-Z ]{2,30}$/;
 
         //To validate the regular expression
-        if(!name_re.exec(firstname.value)){
+        if(!firstname_re.exec(firstname.value)){
             setError(firstname, "Firstname invalid");
             valid = false;
         }else{
@@ -44,8 +45,11 @@ function validation() {
         setError(lastname, "You have to put your lastname!");
         valid = false; //There is an error, so I want "valid" to be false
     }else{
+        //Regular expression
+        let lastname_re = /^[a-zA-Z ]{2,30}$/;
+
         //To validate the regular expression
-        if(!name_re.exec(lastname.value)){
+        if(!lastname_re.exec(lastname.value)){
             setError(lastname, "Lastname invalid");
             valid = false;
         }else{
@@ -53,12 +57,38 @@ function validation() {
         }
     }
 
+        /******Phone******/
+        if(phone.value == null || phone.value == ""){
+            setError(phone, "You have to put your phone!");
+            valid = false; //There is an error, so I want "valid" to be false
+        }else{
+            //Regular expression
+            let phone_re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{3}$/;
+
+            //To validate the regular expression
+            if(!phone_re.exec(phone.value)){
+                setError(phone, "Phone invalid");
+                valid = false;
+            }else{
+                setSuccess(phone);
+            }
+        }
+
     /******Email******/
-    if(email.value == null || email.value == "") {
+    if(email.value == null || email.value == ""){
         setError(email, "You have to put your email!");
-        valid = false;
+        valid = false; //There is an error, so I want "valid" to be false
     }else{
-        setSuccess(email);
+        //Regular expression
+        let email_re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+        //To validate the regular expression
+        if(!email_re.exec(email.value)){
+            setError(email, "Email invalid");
+            valid = false;
+        }else{
+            setSuccess(email);
+        }
     }
 
     /******Privacity and politic******/
