@@ -81,6 +81,27 @@ div.form-item{
     width: 102.59px;
 }
 
+small{
+    background-color: #e74d3c;
+    border-radius: .5rem;
+    padding: .2rem;
+    color: white;
+    bottom: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+.form-item.success input{
+    border-color: rgb(47, 255, 78);
+}
+
+.form-item.error input{
+    border-color: red;
+}
+
+.form-item.error small{
+    visibility: visible;
+}
 
 /*Footer*/
 footer{

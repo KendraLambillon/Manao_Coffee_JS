@@ -42,37 +42,46 @@
     <!-- Booking form -->
     <section class="section-2">
         <h3>Subscription to Manao Coffee</h3>
-                <form id="form" action="#" method="post" target="_blank">
+                <form id="form" name="form" method="post" target="_blank">
+                    <fieldset class="form-control" >
+                        <legend>Personal Information</legend>
                         <div class="form-item">
                             <label class="form-label" for="firstname">Firstname</label>
                             <input class="form-input" id="firstname" type="text" name="firstname" placeholder="Your firstname" >
+                            <small>Error</small>
                         </div>
                         <div class="form-item">
                             <label class="form-label" for="lastname">Lastname</label>
                             <input class="form-input" id="lastname" type="text" name="lastname" placeholder="Your lastname" >
+                            <small>Error</small>
                         </div>
                         <div class="form-item">
                             <label class="form-label" for="phone">Phone</label>
                             <input class="form-input" id="phone" type="text" name="phone" placeholder="Your phone" >
+                            <small>Error</small>
                         </div>
                         <div class="form-item">
                             <label class="form-label" for="email">Email</label>
                             <input class="form-input" id="email" type="text" name="email" placeholder="Your email" >
+                            <small>Error</small>
                         </div>
                         <br>
                         <div class="form-item">
                             <label class="form-label" for="info">Information about yourself - Allergies:</label>
                             <br>
                             <textarea class="form-input" id="info" name="info" placeholder="What do you like, what are your allergies?" cols="30" rows="10" ></textarea>
+                            <small>Error</small>
                         </div>
                         <br>
                         <div class="politic">
                             <input type="checkbox" name="politica" id="politica" value="I accept the politic and privacy" >
                             <label for="politica">I accept the politic and privacy</label>
+                            <small>Error</small>
                         </div>
                         <br>
                         <input type="submit" id="send" name="send form" value="SEND FORM" class="boton_form" >
                         <input type="reset" id="clean" name="clean form" value="CLEAN FORM" class="boton_form" >
+                    </fieldset>
                 </form>
     </section>
 
@@ -97,6 +106,6 @@
             <p>©  2023 Manao Coffee, 12 plaza de la fuente, 43890, Tarragona. All Rights Reserved. Privacy Policy.</p>
         </div>
     </footer>
-    <script src="../js/validationform.js"></script>
+    <script src="../js/validationform1.js"></script>
 </body>
 </html>
