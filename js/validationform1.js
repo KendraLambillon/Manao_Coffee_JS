@@ -9,7 +9,8 @@ let validate = {
     firstname: false,
     lastname: false,
     phone: false,
-    email: false
+    email: false,
+    politica: false
 }
 
 //Error message
@@ -19,6 +20,7 @@ function setError(input, message){
     formItem.className = "form-item error";
     small.innerText = message;
 }
+
 
 //If everything is correct
 function setSuccess(input){
@@ -99,4 +101,20 @@ email.addEventListener("blur",()=>{
     }
 })
 
+//Sending the form
+form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+
+    let errorV = false;
+
+    for(const property in validate){
+        if(validate[property] == false){
+            errorV = true;
+        }
+    }
+
+    if(!errorV){
+        form.submit();
+    }
+})
 
