@@ -62,6 +62,12 @@ h1{
 }
 
 /*About us*/
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .description > h2{
     text-align: center;
     font-size: 40px;
@@ -83,6 +89,62 @@ h1{
     margin-left: auto;
     margin-bottom: 40px;
     margin-right: auto;
+}
+
+.container .box-image{
+    height: 400px;
+    width: 750px;
+    position: relative;
+}
+
+.container .box-image img{
+    width: 100%;
+    height: 100%;
+}
+
+/*Slider*/
+.sliders{
+    position: absolute;
+    top: 50%;
+    width: 35px;
+    cursor: pointer;
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-50%);
+}
+
+.sliders:hover{
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.right{
+    right: 0;
+}
+
+.left{
+    left: 0;
+}
+
+.sliders span{
+    font-size: 35px;
+    line-height: 45px;
+}
+
+.btn-slides {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    display: flex;
+    transform: translateX(-50%);
+}
+
+.btn-slides span {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin: 0 3px;
+    cursor: pointer;
 }
 
 /*Booking form*/
@@ -107,24 +169,19 @@ h1{
     letter-spacing: 2px;
 }
 
-form{
-    display: flex;
-    justify-content: space-between;
-    padding: 30px 30px;
+.item-info input[type=text]{
+    height: 30px;
+    padding: 0px 5px;
+    margin: 10px;
 }
 
-div.form-item{
-    padding: 20px 20px 20px 20px;
+.item-info input[type=date]{
+    height: 30px;
+    padding: 0px 5px;
+    margin: 10px;
 }
 
-div.people-number{
-    display: flex;
-    margin-top: 6px;
-}
 
-div.button-check{
-    margin-top: 5px;
-}
 
 /*Our famous coffee*/
 .famous-coffee > h2{

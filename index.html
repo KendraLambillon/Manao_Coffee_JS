@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
     <title>Manao Coffee</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -50,44 +51,42 @@
                 <p>Eat and drink healthy!</p>
             </div>
             <div class="box-image">
-                <img src="images/coffeeShopPortada.jpg" alt="foto_shop" class="box-image">
+                <img src="images/coffeeShopPortada.jpg" alt="foto_shop" class="box-image gallery">
+                <img src="images/portada1.jpg" alt="foto_shop" class="box-image gallery">
+                <img src="images/partada2.jpg" alt="foto_shop" class="box-image gallery">
+                <img src="images/portada3.jpg" alt="foto_shop" class="box-image gallery">
             </div>
+            <!--
+            <div class="sliders left">
+                <span class="fa-solid fa-arrow-left"></span>
+            </div>
+            <div class="sliders right">
+                <span class="fa-solid fa-arrow-right"></span>
+            </div>
+            <div class="btn-slides">
+                <span class="btn" id="btn-1"></span>
+                <span class="btn" id="btn-2"></span>
+                <span class="btn" id="btn-3"></span>
+                <span class="btn" id="btn-4"></span>
+            </div>
+            -->
         </div>
     </section>
 
     <!-- Booking form -->
     <section class="section-2">
-        <h3>Booking</h3>
-                <form action="#" method="post">
-                        <div class="form-item">
-                            <label class="form-label" for="booking-name">Name</label>
-                            <input class="form-input" id="booking-name" type="text" name="name" placeholder="Your name">
-                        </div>
-                        <div class="form-item">
-                            <label class="form-label" for="booking-phone">Phone</label>
-                            <input class="form-input" id="booking-phone" type="text" name="phone" placeholder="Your phone">
-                        </div>
-                        <div class="form-item">
-                            <label class="form-label" for="booking-date">Date</label>
-                            <input class="form-input" id="booking-date" type="text" name="date" placeholder="Book a date">
-                        </div>
-                        <div class="people-number">
-                            <p>No of people</p>
-                                <select name="Number-of-people">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                </select>
-                        </div>
-                        <div class="button-check">
-                            <button>Check availability</button>
-                        </div>
-                </form>
+        <div class="form-booking">
+            <h3>Booking</h3>
+            <div class="item-info">
+                <input type="text" placeholder="Your name">
+                <input type="text" placeholder="Your phone">
+                <input type="date" placeholder="Date">
+                <input type="text" class="list-people" placeholder="How many people" list="number-people">
+                <datalist id="number-people">
+                </datalist>
+                <button type="submit">Book</button>
+            </div>
+        </div>
     </section>
 
     <!-- Our famous coffee -->
@@ -137,6 +136,7 @@
             <p>©  2023 Manao Coffee, 12 plaza de la fuente, 43890, Tarragona. All Rights Reserved. Privacy Policy.</p>
         </div>
     </footer>
-    <script src="#"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/booking.js"></script>
 </body>
 </html>
