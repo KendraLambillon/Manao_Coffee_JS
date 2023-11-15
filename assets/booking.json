@@ -1,0 +1,16 @@
+{
+    "fiche":[
+        {
+            "name": "Kendra",
+            "phoneNumber": "691665887",
+            "bookingDate": "25/10/2023",
+            "numberOfPeople": "6"
+        },
+        {
+            "name": "Sadit",
+            "phoneNumber": "691456987",
+            "bookingDate": "20/12/2023",
+            "numberOfPeople": "2"
+        }
+    ]
+}
