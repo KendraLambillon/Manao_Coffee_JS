@@ -11,7 +11,7 @@ function DownloadInput(){
                 chain = chain + 'Booking Date' + object_json.fiche[i].bookingDate;
                 chain = chain + 'Number of People' + object_json.fiche[i].numberOfPeople;
             }
-            $(".item-info").html(chain);
+            $("#item-json").html(chain);
         },
         error: function (xhr, status){
             alert("ERROR");
