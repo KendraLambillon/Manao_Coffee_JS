@@ -5,11 +5,11 @@ function DownloadInput(){
         success: function(data){
             object_json = data;
             var  chain = '';
-            for (i=0; i<object_json.fiche.lenght; i++){
-                chain = chain + 'Name' + object_json.fiche[i].name;
-                chain = chain + 'Phone Number' + object_json.fiche[i].phoneNumber;
-                chain = chain + 'Booking Date' + object_json.fiche[i].bookingDate;
-                chain = chain + 'Number of People' + object_json.fiche[i].numberOfPeople;
+            for (i=0; i<object_json.fiche.length; i++){
+                chain = chain + 'Name: <b>' + object_json.fiche[i].name + '</b> </br>';
+                chain = chain + 'Phone Number: <b>' + object_json.fiche[i].phoneNumber + '</b> </br>';
+                chain = chain + 'Booking Date: <b>' + object_json.fiche[i].bookingDate + '</b> </br>';
+                chain = chain + 'Number of People: <b>' + object_json.fiche[i].numberOfPeople + '</b> </br>';
             }
             $("#item-json").html(chain);
         },
