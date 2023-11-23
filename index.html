@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
     <title>Manao Coffee</title>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="css/coin-slider-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
                             <a href="index.html">Home</a>
                         </li>
                         <li class="nav_item">
-                            <a href="views/productos.html">Gallery</a>
+                            <a href="views/galeria.html">Gallery</a>
                         </li>
                         <li class="nav_item">
                             <a href="views/presupuesto.html">Form</a>
@@ -50,26 +51,20 @@
                 <p></p>
                 <p>Eat and drink healthy!</p>
             </div>
-            <div class="box-image">
+            <div id='coin-slider'>
+                <a href="images/coffeeShopPortada.jpg">
                 <img src="images/coffeeShopPortada.jpg" alt="foto_shop" class="box-image gallery">
+                </a>
+                <a href="images/portada1.jpg">
                 <img src="images/portada1.jpg" alt="foto_shop" class="box-image gallery">
+                </a>
+                <a href="images/partada2.jpg">
                 <img src="images/partada2.jpg" alt="foto_shop" class="box-image gallery">
+                </a>
+                <a href="images/portada3.jpg">
                 <img src="images/portada3.jpg" alt="foto_shop" class="box-image gallery">
+                </a>
             </div>
-            <!--
-            <div class="sliders left">
-                <span class="fa-solid fa-arrow-left"></span>
-            </div>
-            <div class="sliders right">
-                <span class="fa-solid fa-arrow-right"></span>
-            </div>
-            <div class="btn-slides">
-                <span class="btn" id="btn-1"></span>
-                <span class="btn" id="btn-2"></span>
-                <span class="btn" id="btn-3"></span>
-                <span class="btn" id="btn-4"></span>
-            </div>
-            -->
         </div>
     </section>
 
@@ -137,8 +132,16 @@
             <p>©  2023 Manao Coffee, 12 plaza de la fuente, 43890, Tarragona. All Rights Reserved. Privacy Policy.</p>
         </div>
     </footer>
-    <script src="js/slider.js"></script>
+    <script src="js/coin-slider.js"></script>
     <script src="js/booking.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#coin-slider').coinslider({
+                width: 900,
+                delay: 5000
+            });
+        });
+    </script>
 </body>
 </html>

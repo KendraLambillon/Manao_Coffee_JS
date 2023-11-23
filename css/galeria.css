@@ -70,7 +70,7 @@ button{
     text-align: center;
 }
 
-.card > img{
+.card > a > img{
     height: 75%;
 }
 

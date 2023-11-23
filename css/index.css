@@ -103,6 +103,11 @@ h1{
 }
 
 /*Slider*/
+#coin-slider{
+    margin:0 auto;
+}
+
+/*
 .sliders{
     position: absolute;
     top: 50%;
@@ -146,6 +151,7 @@ h1{
     margin: 0 3px;
     cursor: pointer;
 }
+*/
 
 /*Booking form*/
 .section-2{
