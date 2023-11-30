@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
     <title>Manao Coffee</title>
     <link rel="stylesheet" type="text/css" href="../css/contacto.css">
+    <!--Creation map with Leaflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
 </head>
 <body>
     <!-- Header -->
@@ -40,11 +48,8 @@
     <!-- Content of the website -->
 
     <!-- Contact -->
-    <div class="contact-info">
-        <h1>Location</h1>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.7915695413317!2d1.2526131756283465!3d41.11724291270886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a3fcd40c95a5c9%3A0x4c0aa60aa8e49f2e!2sPl.%20de%20la%20Fuente%2C%2012%2C%2043003%20Tarragona%2C%20Espagne!5e0!3m2!1sfr!2slu!4v1692874878770!5m2!1sfr!2slu" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-
+    <h1>Location</h1>
+    <div id="map"></div>
 
     <!-- Footer -->
     <footer>
@@ -67,6 +72,7 @@
             <p>©  2023 Manao Coffee, 12 plaza de la fuente, 43890, Tarragona. All Rights Reserved. Privacy Policy.</p>
         </div>
     </footer>
-    <script src="#"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="../js/contacto.js"></script>
 </body>
 </html>

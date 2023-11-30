@@ -37,7 +37,7 @@ button{
 }
 
 
-/*Contact*/
+/*Contact
 .contact-info{
     width: 100%;
     height: 100vh;
@@ -45,16 +45,28 @@ button{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
+}*/
 
 h1{
-    margin-bottom: 60px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 iframe{
     width: 80%;
     height: 500px;
     filter: invert(80%);
+}
+
+/* Map - Check why it does not want to be in the center */
+#map {
+    width: 70%;
+    height: 70vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 80px;
 }
 
 /*Footer*/

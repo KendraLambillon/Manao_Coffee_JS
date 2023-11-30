@@ -31,7 +31,7 @@ function setSuccess(input){
 
 //Validation for the firstname
 firstname.addEventListener("blur",()=>{
-    let firstname_re = /^[a-zA-Z ]{2,30}$/;
+    let firstname_re = /^[a-zA-Z ]{2,15}$/;
 
     if(firstname.value == "" || firstname.value == null){
         validate.firstname = false;
@@ -39,7 +39,7 @@ firstname.addEventListener("blur",()=>{
     }else{
         if(!firstname_re.exec(firstname.value)){
             validate.firstname = false;
-            setError(firstname, "Firstname has to be between 2-30 characters.")
+            setError(firstname, "Firstname has to be between 2-15 characters.")
         }else{
             validate.firstname = true;
             setSuccess(firstname);
@@ -49,7 +49,7 @@ firstname.addEventListener("blur",()=>{
 
 //Validation for the lastname
 lastname.addEventListener("blur",()=>{
-    let lastname_re = /^[a-zA-Z ]{2,30}$/;
+    let lastname_re = /^[a-zA-Z ]{2,40}$/;
 
     if(lastname.value == "" || lastname.value == null){
         validate.lastname = false;
@@ -57,7 +57,7 @@ lastname.addEventListener("blur",()=>{
     }else{
         if(!lastname_re.exec(lastname.value)){
             validate.lastname = false;
-            setError(lastname, "Lastname has to be between 2-30 characters.")
+            setError(lastname, "Lastname has to be between 2-40 characters.")
         }else{
             validate.lastname = true;
             setSuccess(lastname);
