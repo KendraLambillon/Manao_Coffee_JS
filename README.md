@@ -1,6 +1,6 @@
 ﻿# Manao Coffee with JS
 
-As a final exercise, I created this web site, which I got inspired by the futur bussines of my friend.
+As a final exercise, I created this web site, which I got inspired by the futur business of my friend.
 The information is not real for the moment but it will be in the future.
 For the realization of this mockup I used: HTML5, CSS3, JavaScript, Ajax and the plugins or libraries I needed.
 
