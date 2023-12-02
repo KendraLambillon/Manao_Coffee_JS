@@ -1,18 +1,93 @@
-/*Map creation*/
-/*Map, set its view to our chosen geographical coordinates and a zoom level */
-var map = L.map('map').setView([41.11699, 1.25524], 14);
+/*Geolocation*/
+//If geolocation services are available
+if(navigator.geolocation){
+    //Get current position
+    navigator.geolocation.getCurrentPosition(function(position){
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
 
-/*Add a tile layer to add to our map*/
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+        //Initialize the map with geolocation of the user
+        var map = L.map('map', {
+            center: [latitude, longitude],
+            zoom: 12
+        });
 
-/*Add a marker*/
-var marker = L.marker([41.11702459404782, 1.2551477551460266]).addTo(map);
+        //Apply layer map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-/*Pop up on marker*/
-var popup = L.popup()
-    .setLatLng([41.11699, 1.25524])
-    .setContent("Manao Coffee <br> 12 plaza de la fuente, 43890, Tarragona")
-    .openOn(map);
+        //Define initial marker
+        var initial = L.icon({
+            iconUrl: '../images/leaf-green.png',
+            shadowUrl: '../images/leaf-shadow.png',
+
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        //Define final marker
+        var final = L.icon({
+            iconUrl: '../images/leaf-red.png',
+            shadowUrl: '../images/leaf-shadow.png',
+
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        //Define intermediate marker
+        var track = L.icon({
+            iconUrl: '../images/leaf-orange.png',
+            shadowUrl: '../images/leaf-shadow.png',
+
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        //Routing map
+        var control = L.Routing.control({
+            waypoints: [
+                L.latLng(latitude, longitude),
+                L.latLng(41.11708, 1.25510) //Coords geolocation Manao Coffee
+            ],
+            language: 'en',
+            createMarker: function(i, wp, nWps) {
+                switch (i) {
+                    case 0:
+                    return L.marker(wp.latLng, {
+                        icon: initial,
+                        draggable: true
+                    }).bindPopup("<b>" + "Starting 🚗" + "</b>");
+                    case nWps - 1:
+                    return L.marker(wp.latLng, {
+                        icon: final,
+                        draggable: true
+                    }).bindPopup("<b>" + "Destination 😎" + "</b>");
+                    default:
+                    return L.marker(wp.latLng, {
+                        icon: track,
+                        draggable: true
+                    }).bindPopup("<b>" + "Break 😴" + "</b>");
+                }
+            }
+        }).addTo(map);
+    });
+}else{
+    var map = L.map('map', {
+        center: [37.17059, -3.60552],
+        zoom: 17
+    });
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+}

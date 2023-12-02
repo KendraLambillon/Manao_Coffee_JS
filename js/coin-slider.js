@@ -1,10 +1,10 @@
 /**
  * Coin Slider - Unique jQuery Image Slider
  * @version: 1.0 - (2010/04/04)
- * @requires jQuery v1.2.2 or later 
+ * @requires jQuery v1.2.2 or later
  * @author Ivan Lazarevic
  * Examples and documentation at: http://workshop.rs/projects/coin-slider/
- 
+
  * Licensed under MIT licence:
  *   http://www.opensource.org/licenses/mit-license.php
 **/
@@ -19,14 +19,13 @@
 	var titles		= new Array;
 	var interval	= new Array;
 	var imagePos	= new Array;
-	var appInterval = new Array;	
-	var squarePos	= new Array;	
+	var appInterval = new Array;
+	var squarePos	= new Array;
 	var reverse		= new Array;
-	
+
 	$.fn.coinslider= $.fn.CoinSlider = function(options){
-		
+
 		init = function(el){
-				
 			order[el.id] 		= new Array();	// order of square appereance
 			images[el.id]		= new Array();
 			links[el.id]		= new Array();
@@ -34,10 +33,10 @@
 			titles[el.id]		= new Array();
 			imagePos[el.id]		= 0;
 			squarePos[el.id]	= 0;
-			reverse[el.id]		= 1;						
-				
+			reverse[el.id]		= 1;
+
 			params[el.id] = $.extend({}, $.fn.coinslider.defaults, options);
-						
+
 			// create images, links and titles arrays
 			$.each($('#'+el.id+' img'), function(i,item){
 				images[el.id][i] 		= $(item).attr('src');
@@ -46,8 +45,8 @@
 				titles[el.id][i] 		= $(item).next().is('span') ? $(item).next().html() : '';
 				$(item).hide();
 				$(item).next().hide();
-			});			
-			
+			});
+
 
 			// set panel
 			$(el).css({
@@ -56,43 +55,42 @@
 				'height': params[el.id].height,
 				'position': 'relative',
 				'background-position': 'top left'
-			}).wrap("<div class='coin-slider' id='coin-slider-"+el.id+"' />");	
-			
-				
+			}).wrap("<div class='coin-slider' id='coin-slider-"+el.id+"' />");
+
 			// create title bar
 			$('#'+el.id).append("<div class='cs-title' id='cs-title-"+el.id+"' style='position: absolute; bottom:0; left: 0; z-index: 1000;'></div>");
-						
+
 			$.setFields(el);
-			
+
 			if(params[el.id].navigation)
 				$.setNavigation(el);
-			
+
 			$.transition(el,0);
 			$.transitionCall(el);
-				
+
 		}
-		
+
 		// squares positions
 		$.setFields = function(el){
-			
+
 			tWidth = sWidth = parseInt(params[el.id].width/params[el.id].spw);
 			tHeight = sHeight = parseInt(params[el.id].height/params[el.id].sph);
-			
+
 			counter = sLeft = sTop = 0;
 			tgapx = gapx = params[el.id].width - params[el.id].spw*sWidth;
 			tgapy = gapy = params[el.id].height - params[el.id].sph*sHeight;
-			
+
 			for(i=1;i <= params[el.id].sph;i++){
 				gapx = tgapx;
-				
+
 					if(gapy > 0){
 						gapy--;
 						sHeight = tHeight+1;
 					} else {
 						sHeight = tHeight;
 					}
-				
-				for(j=1; j <= params[el.id].spw; j++){	
+
+				for(j=1; j <= params[el.id].spw; j++){
 
 					if(gapx > 0){
 						gapx--;
@@ -103,86 +101,78 @@
 
 					order[el.id][counter] = i+''+j;
 					counter++;
-					
+
 					if(params[el.id].links)
 						$('#'+el.id).append("<a href='"+links[el.id][0]+"' class='cs-"+el.id+"' id='cs-"+el.id+i+j+"' style='width:"+sWidth+"px; height:"+sHeight+"px; float: left; position: absolute;'></a>");
 					else
 						$('#'+el.id).append("<div class='cs-"+el.id+"' id='cs-"+el.id+i+j+"' style='width:"+sWidth+"px; height:"+sHeight+"px; float: left; position: absolute;'></div>");
-								
+
 					// positioning squares
-					$("#cs-"+el.id+i+j).css({ 
+					$("#cs-"+el.id+i+j).css({
 						'background-position': -sLeft +'px '+(-sTop+'px'),
 						'left' : sLeft ,
 						'top': sTop
 					});
-				
+
 					sLeft += sWidth;
 				}
 
 				sTop += sHeight;
-				sLeft = 0;					
-					
+				sLeft = 0;
+
 			}
-			
-			
+
 			$('.cs-'+el.id).mouseover(function(){
 				$('#cs-navigation-'+el.id).show();
 			});
-		
+
 			$('.cs-'+el.id).mouseout(function(){
 				$('#cs-navigation-'+el.id).hide();
-			});	
-			
+			});
+
 			$('#cs-title-'+el.id).mouseover(function(){
 				$('#cs-navigation-'+el.id).show();
 			});
-		
+
 			$('#cs-title-'+el.id).mouseout(function(){
 				$('#cs-navigation-'+el.id).hide();
-			});	
-			
-			if(params[el.id].hoverPause){	
+			});
+
+			if(params[el.id].hoverPause){
 				$('.cs-'+el.id).mouseover(function(){
 					params[el.id].pause = true;
 				});
-			
+
 				$('.cs-'+el.id).mouseout(function(){
 					params[el.id].pause = false;
-				});	
-				
+				});
+
 				$('#cs-title-'+el.id).mouseover(function(){
 					params[el.id].pause = true;
 				});
-			
+
 				$('#cs-title-'+el.id).mouseout(function(){
 					params[el.id].pause = false;
-				});	
+				});
 			}
-					
-			
 		};
-				
-		
+
 		$.transitionCall = function(el){
-		
-			clearInterval(interval[el.id]);	
+
+			clearInterval(interval[el.id]);
 			delay = params[el.id].delay + params[el.id].spw*params[el.id].sph*params[el.id].sDelay;
 			interval[el.id] = setInterval(function() { $.transition(el)  }, delay);
-			
+
 		}
-		
+
 		// transitions
 		$.transition = function(el,direction){
-			
 			if(params[el.id].pause == true) return;
-			
 			$.effect(el);
-			
 			squarePos[el.id] = 0;
 			appInterval[el.id] = setInterval(function() { $.appereance(el,order[el.id][squarePos[el.id]])  },params[el.id].sDelay);
-					
 			$(el).css({ 'background-image': 'url('+images[el.id][imagePos[el.id]]+')' });
-			
+
 			if(typeof(direction) == "undefined")
 				imagePos[el.id]++;
 			else
@@ -190,27 +180,26 @@
 					imagePos[el.id]--;
 				else
 					imagePos[el.id] = direction;
-		
+
 			if  (imagePos[el.id] == images[el.id].length) {
 				imagePos[el.id] = 0;
 			}
-			
+
 			if (imagePos[el.id] == -1){
 				imagePos[el.id] = images[el.id].length-1;
 			}
-	
+
 			$('.cs-button-'+el.id).removeClass('cs-active');
 			$('#cs-button-'+el.id+"-"+(imagePos[el.id]+1)).addClass('cs-active');
-			
+
 			if(titles[el.id][imagePos[el.id]]){
 				$('#cs-title-'+el.id).css({ 'opacity' : 0 }).animate({ 'opacity' : params[el.id].opacity }, params[el.id].titleSpeed);
 				$('#cs-title-'+el.id).html(titles[el.id][imagePos[el.id]]);
 			} else {
 				$('#cs-title-'+el.id).css('opacity',0);
-			}				
-				
+			}
 		};
-		
+
 		$.appereance = function(el,sid){
 
 			$('.cs-'+el.id).attr('href',links[el.id][imagePos[el.id]]).attr('target',linksTarget[el.id][imagePos[el.id]]);
