@@ -73,19 +73,60 @@
                             <small>Error</small>
                         </div>
                         <br>
+
+                        <!-- Budget - Presupuesto -->
+                        <div id="campos">
+                            <!-- Selection of products -->
+                            <div>
+                                <label for="product">Type of product: </label>
+                                <select name="product" id="product">
+                                    <option value="7">Capucchino 7€</option>
+                                    <option value="8">Mint Lavander 8€</option>
+                                    <option value="10">Blue Matcha 10€</option>
+                                    <option value="5">Bombon 5€</option>
+                                    <option value="5">Iced coffee 5€</option>
+                                    <option value="10">Pink Matcha 10€</option>
+                                    <option value="12">Trifacico 12€</option>
+                                </select>
+                            </div>
+
+                            <!-- Delivery time in hours -->
+                            <div>
+                                <label for="delivery">Delivery time in hour</label>
+                                <input type="number" min="1" max="3" name="delivery" id="delivery" value="1">
+                            </div>
+
+                            <!-- Extras -->
+                            <div id="extras">
+                                <label for="oatmilk">Oat Milk</label>
+                                <input type="checkbox" value="1" name="oatmilk" id="oatmilk">
+                                <label for="whipped">Whipped Cream</label>
+                                <input type="checkbox" value="2" name="whipped" id="whipped">
+                                <label for="syrup">Syrup</label>
+                                <input type="checkbox" value="3" name="syrup" id="syrup">
+                            </div>
+
+                            <!-- Estimated budget -->
+                            <div>
+                                <label for="total">Estimated budget: </label>
+                                <input type="text" value="7" id="total">
+                            </div>
+                        </div>
+
+                        <!-- Politic and privavcy -->
                         <div class="politic">
                             <input type="checkbox" name="politica" id="politica" value="I accept the politic and privacy" >
                             <label for="politica">I accept the politic and privacy</label>
                             <small>Error</small>
                         </div>
                         <br>
+
+                        <!-- Form buttons -->
                         <input type="submit" id="send" name="send form" value="SEND" class="boton_form" >
                         <input type="reset" id="clean" name="clean form" value="CLEAR" class="boton_form" >
                     </fieldset>
                 </form>
     </section>
-
-    <!-- Budget - Presupuesto -->
 
     <!-- Footer -->
     <footer>
@@ -109,5 +150,6 @@
     </footer>
     <script src="../js/validationform1.js"></script>
     <!-- <script src="../js/validationform.js"></script>-->
+    <script src="../js/presupuesto.js"></script>
 </body>
 </html>

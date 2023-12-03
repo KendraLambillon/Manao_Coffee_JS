@@ -66,6 +66,12 @@ div.form-item{
     text-transform: none;
 }
 
+#campos{
+    letter-spacing: 1.5px;
+    text-transform: none;
+    margin-bottom: 30px;
+}
+
 .politic{
     text-transform: none;
 }
