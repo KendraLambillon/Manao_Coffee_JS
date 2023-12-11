@@ -1,16 +1,32 @@
 {
     "fiche":[
         {
-            "name": "Kendra",
-            "phoneNumber": "691665887",
-            "bookingDate": "25/10/2023",
-            "numberOfPeople": "6"
+            "day": "Lunes",
+            "horario": "06h00 - 14h30"
         },
         {
-            "name": "Sadit",
-            "phoneNumber": "691456987",
-            "bookingDate": "20/12/2023",
-            "numberOfPeople": "2"
+            "day": "Martes",
+            "horario": "06h30 - 14h00"
+        },
+        {
+            "day": "Miercoles",
+            "horario": "06h00 - 14h30"
+        },
+        {
+            "day": "Jueves",
+            "horario": "06h30 - 14h00"
+        },
+        {
+            "day": "Viernes",
+            "horario": "06h00 - 14h30"
+        },
+        {
+            "day": "Sabado",
+            "horario": "08h30 - 15h00"
+        },
+        {
+            "day": "Domingo",
+            "horario": "08h30 - 15h00"
         }
     ]
 }

@@ -6,10 +6,8 @@ function DownloadInput(){
             object_json = data;
             var  chain = '';
             for (i=0; i<object_json.fiche.length; i++){
-                chain = chain + 'Name: <b>' + object_json.fiche[i].name + '</b> </br>';
-                chain = chain + 'Phone Number: <b>' + object_json.fiche[i].phoneNumber + '</b> </br>';
-                chain = chain + 'Booking Date: <b>' + object_json.fiche[i].bookingDate + '</b> </br>';
-                chain = chain + 'Number of People: <b>' + object_json.fiche[i].numberOfPeople + '</b> </br>';
+                chain = chain + 'Day: <b>' + object_json.fiche[i].day + '</b> </br>';
+                chain = chain + 'Horario: <b>' + object_json.fiche[i].horario + '</b> </br>';
             }
             $("#item-json").html(chain);
         },
