@@ -102,7 +102,6 @@ function validation() {
     if(valid == true) {
         return true;
     }else{
-
         return false;
     }
 }
