@@ -1,36 +1,41 @@
 (()=>{
+
     let totalSum = 0;
 
-    const typeProduct = document.querySelector("#product"); // one element
-    const deliveryTime = document.querySelector("#delivery");
-    const extras = document.querySelector("#extras>input"); // Array
-    const estimatedBudget = document.querySelector("#total");
+    const typeCoffee = document.querySelector("#product"); //One element
+    const delivery = document.querySelector("#delivery");
+    const extras = document.querySelectorAll("#extras>input"); //Array
+    const totalEst = document.querySelector("#total");
 
-    let sum = ()=>{
-        totalSum = parseInt(typeProduct.value);
+    let suma = ()=>{
+        totalSum = parseFloat(typeCoffee.value);
 
-        switch (deliveryTime.value) {
+        switch (delivery.value) {
             case "1":
-                totalSum += 1;
+                totalSum += 8;
                 break;
-            case "1":
-                totalSum += 2;
+            case "2":
+                totalSum += 4;
                 break;
-            case "1":
-                totalSum += 3;
+            case "3":
+                totalSum += 0;
+                break;
+            default:
+                totalSum += 0;
                 break;
         }
 
         extras.forEach(element => {
             if(element.checked){
-                totalSum += parseInt(element.value);
+                totalSum += parseFloat(element.value);
             }
         });
+        totalEst.value = totalSum;
     }
 
     extras.forEach(element => {
-        element.addEventListener("change", sum, false);
+        element.addEventListener("change",suma,false);
     });
-    typeProduct.addEventListener("change", sum, false);
-    deliveryTime.addEventListener("change", sum, false);
+    typeCoffee.addEventListener("change",suma,false);
+    delivery.addEventListener("change",suma,false);
 })();

@@ -78,38 +78,35 @@
                         <div id="campos">
                             <!-- Selection of products -->
                             <div>
-                                <label for="product">Type of product: </label>
+                                <label for="product">Buy coffee: </label>
                                 <select name="product" id="product">
-                                    <option value="7">Capucchino 7€</option>
-                                    <option value="8">Mint Lavander 8€</option>
-                                    <option value="10">Blue Matcha 10€</option>
-                                    <option value="5">Bombon 5€</option>
-                                    <option value="5">Iced coffee 5€</option>
-                                    <option value="10">Pink Matcha 10€</option>
-                                    <option value="12">Trifacico 12€</option>
+                                    <option value="7">Coffee Brazil - 8.50€</option>
+                                    <option value="8">Coffee Colombia - 8.50€</option>
+                                    <option value="10">Coffee Ethipia - 8.50€</option>
+                                    <option value="5">Coffee Indonesia - 8.50€</option>
                                 </select>
                             </div>
 
                             <!-- Delivery time in hours -->
                             <div>
-                                <label for="delivery">Delivery time in hour</label>
-                                <input type="number" min="1" max="3" name="delivery" id="delivery" value="1">
+                                <label for="delivery">Delivery (days): </label>
+                                <input type="number" min="1" max="3" name="delivery" id="delivery" value="3">
                             </div>
 
                             <!-- Extras -->
                             <div id="extras">
-                                <label for="oatmilk">Oat Milk</label>
-                                <input type="checkbox" value="1" name="oatmilk" id="oatmilk">
-                                <label for="whipped">Whipped Cream</label>
-                                <input type="checkbox" value="2" name="whipped" id="whipped">
-                                <label for="syrup">Syrup</label>
-                                <input type="checkbox" value="3" name="syrup" id="syrup">
+                                <label for="250gr">250gr</label>
+                                <input type="checkbox" value="8.50" name="250gr" id="250gr">
+                                <label for="500gr">500gr</label>
+                                <input type="checkbox" value="17" name="500gr" id="500gr">
+                                <label for="1000gr">1000gr</label>
+                                <input type="checkbox" value="34" name="1000gr" id="1000gr">
                             </div>
 
                             <!-- Estimated budget -->
                             <div>
                                 <label for="total">Estimated budget: </label>
-                                <input type="text" value="7" id="total">
+                                <input type="text" value="8.50" id="total">
                             </div>
                         </div>
 
@@ -122,8 +119,8 @@
                         <br>
 
                         <!-- Form buttons -->
-                        <input type="submit" id="send" name="send form" value="SEND" class="boton_form" >
-                        <input type="reset" id="clean" name="clean form" value="CLEAR" class="boton_form" >
+                        <input type="submit" id="send" name="send" value="SEND" class="boton_form" >
+                        <input type="reset" id="clean" name="clean" value="CLEAR" class="boton_form" >
                     </fieldset>
                 </form>
     </section>
