@@ -49,6 +49,15 @@ h1{
     margin-bottom: 100px;
 }
 
+/*Address & contact*/
+#addressTel {
+    text-align: center;
+    color: #7d7e80;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 /*Footer*/
 footer{
     color: white;
