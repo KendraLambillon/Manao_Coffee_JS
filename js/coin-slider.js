@@ -471,6 +471,13 @@
 		links : true, // show images as links 
 		hoverPause: true // pause on hover		
 	};	
-	
+
 })(jQuery);
-	
+
+// call the function when the page DOM is ready
+$(document).ready(function() {
+	$('#coin-slider').coinslider({
+		width: 900,
+		delay: 5000
+	});
+});

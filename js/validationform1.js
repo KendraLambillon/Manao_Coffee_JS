@@ -9,15 +9,14 @@ let validate = {
     firstname: false,
     lastname: false,
     phone: false,
-    email: false,
-    politica: false
+    email: false
 }
 
 //Error message
 function setError(input, message){
     const formItem = input.parentElement;
-    const small = formItem.querySelector("small");
-    formItem.className = "form-item error";
+    const small = formItem.querySelector("small"); // select where the mensaje is written
+    formItem.className = "form-item error"; // select css class
     small.innerText = message;
 }
 
